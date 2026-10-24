@@ -1,0 +1,22 @@
+# Simple Web Stack
+
+## Infrastructure Diagram
+
+https://github.com/ixhadeel/holbertonschool-system_engineering-devops/blob/main/web_infrastructure_design/0-simple_web_stack.png
+
+## Components
+
+- Domain: foobar.com
+- DNS: A record for www.foobar.com pointing to 8.8.8.8
+- Server: One server hosting the website
+- Web Server: Nginx handles HTTP requests
+- Application Server: Executes application logic
+- Application Files: Contains the application code
+- Database: MySQL stores application data
+- Communication: HTTP over TCP/IP
+
+## Infrastructure Issues
+
+- Single Point of Failure (SPOF): If the server fails, the website becomes unavailable.
+- Downtime: Maintenance or deployment may interrupt the website.
+- Scalability: One server may not handle high traffic.

@@ -1,0 +1,20 @@
+# Distributed Web Infrastructure
+
+## Infrastructure Diagram
+https://github.com/ixhadeel/holbertonschool-system_engineering-devops/blob/main/web_infrastructure_design/1-distributed_web_infrastructure.png
+
+## Components
+- HAProxy distributes incoming traffic between two application servers.
+- Round Robin sends requests to each server in rotation.
+- Both application servers are Active-Active and handle requests simultaneously.
+- Active-Passive means one server handles traffic while another remains on standby.
+- Each application server contains Nginx, an application server, application files, and MySQL.
+- MySQL Primary handles writes and replicates data to MySQL Replica.
+- MySQL Replica handles read queries.
+- Both application servers send database writes to the Primary.
+
+## Infrastructure Issues
+- SPOF: The single HAProxy load balancer.
+- SPOF: The MySQL Primary for write operations without automatic failover.
+- Security: No firewall and no HTTPS.
+- Monitoring: No monitoring system is configured.

@@ -1,0 +1,19 @@
+# Secured and Monitored Web Infrastructure
+
+## Infrastructure Diagram
+https://github.com/ixhadeel/holbertonschool-system_engineering-devops/blob/main/web_infrastructure_design/2-secured_and_monitored_web_infrastructure.png
+
+## Security
+- Three firewalls protect the load balancer and the two application servers.
+- An SSL certificate is installed on the load balancer to serve www.foobar.com over HTTPS.
+- HTTPS encrypts traffic between the user and the load balancer.
+
+## Monitoring
+- Three monitoring clients collect metrics and logs from the three servers.
+- The monitoring service receives the collected data for analysis.
+- To monitor web server QPS, measure the number of HTTP requests handled per second.
+
+## Infrastructure Issues
+- SSL termination at the load balancer means backend traffic may remain unencrypted.
+- Only one MySQL server can accept writes, which creates a write availability risk.
+- Having the same components on all servers can cause resource contention and make scaling harder.
